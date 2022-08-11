@@ -19,5 +19,5 @@ export default App;
 
 // gini
 // languages
-// colors
-// homepage
+// colors individual countries page
+// borders side scroll + flags to click?
