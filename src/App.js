@@ -17,7 +17,7 @@ function App() {
 export default App;
 
 
-// gini
-// languages
-// colors individual countries page
+// home page banner?
+// back button on coutry page?
+// Region display ?
 // borders side scroll + flags to click?

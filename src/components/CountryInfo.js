@@ -6,10 +6,6 @@ const CountryInfo = ({ data }) => {
 
     const [currencies] = useState(Object.keys(data.currencies).map(key => data.currencies[key]));
 
-    
-
-    console.log(currencies)
-
     return (
         <article className="w-full bg-white flex flex-col justify-center items-start">
             <div className="bg-sky-900 w-full flex items-center pl-2 py-2 mb-10">
@@ -17,8 +13,18 @@ const CountryInfo = ({ data }) => {
                     {data.flag}
                 </div>
                 <div className="relative text-white font-semibold w-full h-full mt-3 md:mt-6">
+                    {data.name.common.length <= 8 &&
                     <h2 className="text-5xl text-white">{data.name.common}</h2>
+                    }
+                    {data.name.common.length > 8 &&
+                    <h2 className="text-2xl text-white">{data.name.common}</h2>
+                    }
+                    {data.name.official.length <= 14 &&
                     <p className="text-md text-white">Official: {data.name.official}</p>
+                    }
+                    {data.name.official.length > 14 &&
+                    <p className="text-sm text-white">Official: {data.name.official}</p>
+                    }
                 </div>
             </div>
 
@@ -28,7 +34,8 @@ const CountryInfo = ({ data }) => {
 
             {/* continent */}
             <InfoTile 
-            data={`🌍 ${data.continents}`} 
+            data={`🌍 ${data.subregion}`}
+            extra={"ℹ️"}
             />
             {/* capital city */}
             <InfoTile 
@@ -70,19 +77,16 @@ const CountryInfo = ({ data }) => {
              {/* Roads */}
              {data.car.side === 'left' &&
                 <InfoTile
-                title={"Roads"} 
                 description={`${data.demonyms.eng.m} people drive on the `} 
-                data={`🚗 ⬅️ 🛣️ `} 
+                data={`⬅️ 🛣️ `} 
                 />
             }
             {data.car.side === 'right' &&
                 <InfoTile
-                title={"🚗 Roads"} 
                 description={`${data.demonyms.eng.m} people drive on the `} 
-                data={`🛣️ ➡️ 🚗 `} 
+                data={`🛣️ ➡️`} 
                 />
             }
-
         </article>
     );
 }

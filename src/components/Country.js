@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CountryInfo from "./CountryInfo";
+import Loading from "./Loading";
 
 const Country = () => {
 
@@ -49,7 +50,7 @@ const Country = () => {
             }
 
             {loading &&
-                <p>loading</p>
+                <Loading/>
             }
 
         </div>
