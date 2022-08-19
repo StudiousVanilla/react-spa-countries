@@ -16,8 +16,6 @@ function App() {
 
 export default App;
 
-
-// home page banner?
-// back button on coutry page?
+// Add home button to individual countries page
 // Region display ?
-// borders side scroll + flags to click?
+// Borders not resetting once clikced through to new country - fix!!! (investage cca3 fix attempt)

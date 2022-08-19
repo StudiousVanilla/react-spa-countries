@@ -76,6 +76,10 @@ const Countries = () => {
     return (
         <div>
 
+            <header className="w-full flex justify-center bg-sky-900">
+                <h1 className="text-white text-3xl p-4 font-bold">React Countries SPA</h1>
+            </header>
+
             <form   onSubmit={handleSearch} className="flex justify-center my-5 w-full">
                 <div className="relative w-5/6">
                     <input type="text" id="searchInput" className="block p-2.5 w-full z-20 text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white rounded-r-md" placeholder="Country search"onChange={updateSearchTerm} ref={ref}/>

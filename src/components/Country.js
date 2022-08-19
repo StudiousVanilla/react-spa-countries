@@ -46,7 +46,7 @@ const Country = () => {
             }
 
             {data &&
-                <CountryInfo data={data[0]} />
+                <CountryInfo data={data[0]} cca3={cca3} />
             }
 
             {loading &&

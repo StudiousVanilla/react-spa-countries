@@ -1,8 +1,9 @@
 import { useState } from "react";
 import InfoTile from "./InfoTile";
 import InfoTileList from "./InfoTileList";
+import BordersInfo from './BordersInfo'
 
-const CountryInfo = ({ data }) => {
+const CountryInfo = ({ data, cca3 }) => {
 
     const [currencies] = useState(Object.keys(data.currencies).map(key => data.currencies[key]));
 
@@ -51,9 +52,10 @@ const CountryInfo = ({ data }) => {
             />
             {/* borders */}
             {data.borders &&
-                <InfoTileList 
+                <BordersInfo 
                 title={"🛂"} 
-                data={data.borders} 
+                data={data.borders}
+                cca3={cca3}
                 />
             }
             {!data.borders &&
@@ -71,7 +73,7 @@ const CountryInfo = ({ data }) => {
             {currencies.length > 1 &&
                 <InfoTileList 
                 title={"💱"} 
-                data={currencies} 
+                data={currencies}
                 />
             }
              {/* Roads */}
