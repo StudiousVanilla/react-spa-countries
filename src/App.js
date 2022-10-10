@@ -16,6 +16,5 @@ function App() {
 
 export default App;
 
-// Add home button to individual countries page
 // Region display ?
 // Borders not resetting once clikced through to new country - fix!!! (investage cca3 fix attempt)

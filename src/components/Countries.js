@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import HomepageBanner from "./HomepageBanner";
 import Flag from "./Flag";
 import Loading from "./Loading";
 
@@ -44,16 +45,16 @@ const Countries = () => {
         }
     }
 
-    const updateSearchTerm = () =>{
+    const updateSearchTerm = () => {
         filterCountries(ref.current.value)
     }
 
-    const filterCountries = (searchTerm) =>{
-        if(searchTerm === ''){
+    const filterCountries = (searchTerm) => {
+        if (searchTerm === '') {
             setData(master)
             console.log('reset')
         }
-        else{
+        else {
             const filteredData = master.filter(country => country.name.official.toLowerCase().includes(searchTerm))
             setData(filteredData)
             setNeedReset(true)
@@ -76,13 +77,11 @@ const Countries = () => {
     return (
         <div>
 
-            <header className="w-full flex justify-center bg-sky-900">
-                <h1 className="text-white text-3xl p-4 font-bold">React Countries SPA</h1>
-            </header>
+            <HomepageBanner />
 
-            <form   onSubmit={handleSearch} className="flex justify-center my-5 w-full">
+            <form onSubmit={handleSearch} className="flex justify-center my-5 w-full">
                 <div className="relative w-5/6">
-                    <input type="text" id="searchInput" className="block p-2.5 w-full z-20 text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white rounded-r-md" placeholder="Country search"onChange={updateSearchTerm} ref={ref}/>
+                    <input type="text" id="searchInput" className="block p-2.5 w-full z-20 text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white rounded-r-md" placeholder="Country search" onChange={updateSearchTerm} ref={ref} />
 
                     <button type="submit" className="absolute -top-0 -right-1 p-2.5 text-sm font-medium text-white bg-blue-600 rounded-r-md">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -116,7 +115,7 @@ const Countries = () => {
 
             {loading &&
 
-                <Loading/>
+                <Loading />
             }
 
 

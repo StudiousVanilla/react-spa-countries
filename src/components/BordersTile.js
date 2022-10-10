@@ -14,7 +14,11 @@ const BordersTile = ({ title, countries }) => {
                     <span>?</span>
                 }
                 {countries.length === 1 &&
-                    <span>{countries[0].flag}</span>
+                    <span>
+                        <Link to={`/${countries[0].cca3}`}>
+                            {countries[0].flag}
+                        </Link>
+                    </span>
                 }
                 {countries.length > 1 &&
                     <div className="">

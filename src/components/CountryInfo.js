@@ -2,10 +2,18 @@ import { useState } from "react";
 import InfoTile from "./InfoTile";
 import InfoTileList from "./InfoTileList";
 import BordersInfo from './BordersInfo'
+import { useEffect } from "react";
 
 const CountryInfo = ({ data, cca3 }) => {
 
-    const [currencies] = useState(Object.keys(data.currencies).map(key => data.currencies[key]));
+    const [currencies, setCurrencies] = useState({'test':0});
+    const [borders, setBorders] = useState(data.borders);
+
+    useEffect(() => {
+        setCurrencies(Object.keys(data.currencies).map(key => data.currencies[key]))
+        setBorders(data.borders)
+      }, [data])
+    
 
     return (
         <article className="w-full bg-white flex flex-col justify-center items-start">
@@ -54,7 +62,7 @@ const CountryInfo = ({ data, cca3 }) => {
             {data.borders &&
                 <BordersInfo 
                 title={"🛂"} 
-                data={data.borders}
+                data={borders}
                 cca3={cca3}
                 />
             }

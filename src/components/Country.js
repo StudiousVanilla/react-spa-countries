@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CountryInfo from "./CountryInfo";
+import HomeButton from "./HomeButton";
 import Loading from "./Loading";
 
 const Country = () => {
@@ -52,6 +53,8 @@ const Country = () => {
             {loading &&
                 <Loading/>
             }
+
+            <HomeButton/>
 
         </div>
     );
