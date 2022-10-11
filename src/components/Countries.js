@@ -47,7 +47,6 @@ const Countries = () => {
 
     const updateSearchTerm = () => {
         filterCountries(ref.current.value)
-        alert(ref.current.value);
     }
 
     const filterCountries = (searchTerm) => {
@@ -56,6 +55,7 @@ const Countries = () => {
         }
         else {
             const filteredData = master.filter(country => country.name.official.toLowerCase().includes(searchTerm))
+            alert(filteredData)
             setData(filteredData)
             setNeedReset(true)
         }
