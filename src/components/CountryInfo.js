@@ -7,11 +7,9 @@ import { useEffect } from "react";
 const CountryInfo = ({ data, cca3 }) => {
 
     const [currencies, setCurrencies] = useState({'test':0});
-    const [borders, setBorders] = useState(data.borders);
 
     useEffect(() => {
         setCurrencies(Object.keys(data.currencies).map(key => data.currencies[key]))
-        setBorders(data.borders)
       }, [data])
     
 
@@ -44,7 +42,6 @@ const CountryInfo = ({ data, cca3 }) => {
             {/* continent */}
             <InfoTile 
             data={`🌍 ${data.subregion}`}
-            extra={"ℹ️"}
             />
             {/* capital city */}
             <InfoTile 
@@ -62,7 +59,7 @@ const CountryInfo = ({ data, cca3 }) => {
             {data.borders &&
                 <BordersInfo 
                 title={"🛂"} 
-                data={borders}
+                borders={data.borders}
                 cca3={cca3}
                 />
             }

@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const BordersTile = ({ title, countries }) => {
 
     // logic to get flags
 
+
+
+    useEffect(() => {
+      
+    }, [countries])
+    
     return (
         <div className="bg-white max-h-[17vh] p-3 border-2 border-slate-400 rounded-md mx-auto mb-2 w-[95%] shadow-md hover:shadow-lg flex">
 

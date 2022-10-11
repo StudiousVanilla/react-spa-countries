@@ -15,6 +15,3 @@ function App() {
 }
 
 export default App;
-
-// Region display ?
-// Borders not resetting once clikced through to new country - fix!!! (investage cca3 fix attempt)

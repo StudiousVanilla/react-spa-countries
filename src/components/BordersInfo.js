@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import BordersTile from './BordersTile'
 
-const BordersInfo = ({ title, data , cca3}) => {
+const BordersInfo = ({ title, borders , cca3}) => {
 
     const [countries, setCountries] = useState([])
-    const [codes] = useState(data.join(','))
+
+    
 
     useEffect(() => {
-
-        const getData = async (codes) => {
+        const getData = async () => {
             try {
-                const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${codes}`);
+                const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borders.join(',')}`);
                 // this is for http errors
                 if (!response.ok) {
                     throw new Error(
@@ -19,6 +19,7 @@ const BordersInfo = ({ title, data , cca3}) => {
                 }
                 let actualData = await response.json();
                 setCountries(actualData)
+                
             }
             catch (error) {
                 console.log(error);
@@ -28,8 +29,9 @@ const BordersInfo = ({ title, data , cca3}) => {
                 return
             }
         }
-        getData(codes)
-    }, [codes, cca3])
+
+        getData()
+    }, [borders, cca3])
 
     return (
         <BordersTile title={title} countries={countries} />
