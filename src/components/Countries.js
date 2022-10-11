@@ -47,12 +47,12 @@ const Countries = () => {
 
     const updateSearchTerm = () => {
         filterCountries(ref.current.value)
+        alert("Hello! I am an alert box!!");
     }
 
     const filterCountries = (searchTerm) => {
         if (searchTerm === '') {
             setData(master)
-            console.log('reset')
         }
         else {
             const filteredData = master.filter(country => country.name.official.toLowerCase().includes(searchTerm))
@@ -78,6 +78,8 @@ const Countries = () => {
         <div>
 
             <HomepageBanner />
+
+            
 
             <form onSubmit={handleSearch} className="flex justify-center my-5 w-full">
                 <div className="relative w-5/6">
