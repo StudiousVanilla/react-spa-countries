@@ -47,7 +47,7 @@ const Countries = () => {
 
     const updateSearchTerm = () => {
         filterCountries(ref.current.value)
-        alert("Hello! I am an alert box!!");
+        alert(ref.current.value);
     }
 
     const filterCountries = (searchTerm) => {
